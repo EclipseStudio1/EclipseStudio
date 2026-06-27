@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse Studio - Dashboard</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="logo-rond.png?v=2">
+    <link rel="stylesheet" href="style.css?v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="DA96E351-0643-4606-AC57-365A93042AE4.png" alt="Eclipse Studio Logo" class="logo-img">
+        </div>
+
+        <nav class="sidebar-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'accueil')">🏠 Accueil</button>
+            <button class="tab-btn" onclick="openTab(event, 'maps')">🗺️ Nos Maps</button>
+            <button class="tab-btn" onclick="openTab(event, 'info-tab')">ℹ️ Infos</button>
+            <button class="tab-btn" onclick="openTab(event, 'creator-tab')">🛒 Code Créateur</button>
+            <button class="tab-btn" onclick="openTab(event, 'equipe-tab')">👥 L'Équipe</button>
+            <button class="tab-btn" onclick="openTab(event, 'discord-tab')">💬 Nos Discords</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="ticket.html" class="ticket-btn">
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <div id="accueil" class="tab-content active">
+            <div class="hero-teaser">
+                <h1>ECLIPSE <span class="purple-glow">STUDIO</span></h1>
+                <p class="tagline">Studio de création sur Fortnite UEFN.</p>
+                
+                <div class="project-card">
+                    <span class="badge-dev">À peine commencée</span>
+                    <h3>Projet Actuel : <strong>Eclipse RP</strong></h3>
+                    <p>Nous venons tout juste de relancer la création de la map de zéro ! Le développement débute à peine sur l'UEFN, restez connectés pour suivre l'avancée.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="maps" class="tab-content">
+            <h2>Nos Créations UEFN</h2>
+            <p class="tagline">Retrouve le code dès qu'il sera actif.</p>
+            <div class="maps-grid">
+                <div class="map-card-placeholder">
+                    <h4>🗺️ Eclipse RP</h4>
+                    <span class="badge-dev">En cours de build</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="info-tab" class="tab-content">
+            <h2>Informations Générales</h2>
+            <p class="tagline">Les dernières actualités concernant le studio et nos projets.</p>
+            
+            <div class="info-container">
+                <div class="info-box">
+                    <h4>📢 Avancement du projet</h4>
+                    <p>La map Eclipse RP redémarre sur de nouvelles bases pour proposer la meilleure expérience possible. Parallèlement, nous configurons l'écosystème global du studio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="creator-tab" class="tab-content">
+            <h2>Soutenir Eclipse Studio</h2>
+            <p class="tagline">Utilise notre code dans la boutique Fortnite pour nous aider à grow !</p>
+            
+            <div class="creator-container">
+                <div class="creator-box">
+                    <span class="shop-badge">Boutique Fortnite</span>
+                    <h3>CODE CRÉATEUR :</h3>
+                    <div class="code-display">ECLIPSE_STUDIO</div>
+                    <p class="case-warning">✨ Les majuscules ou minuscules ne changent rien !</p>
+                    <p class="creator-note">En entrant ce code au moment de tes achats de V-Bucks ou de skins, une partie de ton achat soutient directement le développement de nos futures maps UEFN et du serveur Eclipse RP !</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="equipe-tab" class="tab-content">
+            <h2>L'Équipe Eclipse Studio</h2>
+            <p class="tagline">La structure et la hiérarchie officielle du projet UEFN.</p>
+            
+            <div class="team-hierarchy">
+                <div class="hierarchy-section">
+                    <h3 class="section-title">👑 Direction</h3>
+                    <div class="team-grid">
+                        <div class="member-card rank-owner">
+                            <div class="member-header">
+                                <span class="role-badge badge-owner">Propriétaire</span>
+                            </div>
+                            <h4 class="member-name">theo_137</h4>
+                            <p class="member-desc">Les propriétaires ont accès à l'intégralité d'un projet. Seuls les propriétaires peuvent voir la monétisation et transférer les droits de projets. Les propriétaires peuvent gérer les membres de l'équipe.</p>
+                        </div>
+
+                        <div class="member-card rank-admin">
+                            <div class="member-header">
+                                <span class="role-badge badge-admin">Administrateur</span>
+                            </div>
+                            <h4 class="member-name">ilan_1108</h4>
+                            <p class="member-desc">Les administrateurs ont accès à l'intégralité des projets, sauf la monétisation. Les administrateurs peuvent gérer les membres de l'équipe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hierarchy-section">
+                    <h3 class="section-title">🛠️ Production</h3>
+                    <div class="team-grid">
+                        <div class="member-card rank-editor">
+                            <div class="member-header">
+                                <span class="role-badge badge-editor">Éditeur</span>
+                            </div>
+                            <h4 class="member-name">Pseudo_Éditeur</h4>
+                            <p class="member-desc">Les éditeurs ont accès à l'intégralité d'un projet. Les éditeurs ne peuvent pas gérer l'équipe.</p>
+                        </div>
+
+                        <div class="member-card rank-collab">
+                            <div class="member-header">
+                                <span class="role-badge badge-collab">Collaborateur</span>
+                            </div>
+                            <h4 class="member-name">Pseudo_Collab</h4>
+                            <p class="member-desc">Les collaborateurs peuvent effectuer des modifications au projet, mais ils ne peuvent pas publier et n'ont pas accès aux statistiques. Les collaborateurs ne peuvent pas gérer l'équipe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hierarchy-section">
+                    <h3 class="section-title">🧪 Force de Test</h3>
+                    <div class="team-grid">
+                        <div class="member-card rank-tester">
+                            <div class="member-header">
+                                <span class="role-badge badge-tester">Testeurs Officiels</span>
+                            </div>
+                            <h4 class="member-name">L'Équipe de Test</h4>
+                            <p class="member-desc">Membres chargés de traquer les bugs et de tester l'équilibrage du gameplay sur l'UEFN.</p>
+                            <ul class="testers-list">
+                                <li>Pseudo_Testeur1</li>
+                                <li>Pseudo_Testeur2</li>
+                                <li>Pseudo_Testeur3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="discord-tab" class="tab-content">
+            <h2>Rejoindre la communauté Eclipse RP</h2>
+            <p class="tagline">Discute avec le staff, suis l'avancement du développement et participe aux alphas fermées !</p>
+            
+            <div class="discord-boxes-container">
+                <div class="discord-direct-box">
+                    <h3>Eclipse Studio</h3>
+                    <p>Le serveur principal officiel de notre studio de build et d'UEFN.</p>
+                    <a href="https://discord.gg/hGCQBKWbdA" target="_blank" class="btn-join-large">
+                        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord Logo" class="discord-icon">
+                        Rejoindre le Studio
+                    </a>
+                </div>
+
+                <div class="discord-direct-box">
+                    <h3>Eclipse RP <span class="text-ready">(Prêt)</span></h3>
+                    <p>Le serveur communautaire est entièrement configuré et prêt pour la future map RolePlay.</p>
+                    <a href="https://discord.gg/NX8mBt5gCp" target="_blank" class="btn-join-large orange-btn">
+                        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord Logo" class="discord-icon">
+                        Rejoindre le Serveur RP
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>

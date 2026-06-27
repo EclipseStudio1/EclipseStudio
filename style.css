@@ -1,0 +1,431 @@
+/* ==========================================================================
+   1. RESET ET STYLE DE BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0c0914;
+    color: #ffffff;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* ==========================================================================
+   2. LA BARRE LATÉRALE (SIDEBAR À GAUCHE)
+   ========================================================================== */
+.sidebar {
+    width: 260px;
+    background-color: #07050d;
+    border-right: 2px solid rgba(189, 0, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+/* --- Zone du Logo (Image PP du serveur) --- */
+.sidebar-logo {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #bd00ff;
+    box-shadow: 0 0 15px rgba(189, 0, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* --- La liste des Onglets (Boutons) --- */
+.sidebar-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: #8c88a0;
+    text-align: left;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s ease;
+    width: 100%;
+}
+
+.tab-btn:hover {
+    background: rgba(189, 0, 255, 0.05);
+    color: #ffffff;
+}
+
+.tab-btn.active {
+    background: linear-gradient(45deg, rgba(189, 0, 255, 0.2), rgba(255, 0, 122, 0.1));
+    color: #ffffff;
+    border-left: 4px solid #bd00ff;
+}
+
+/* ==========================================================================
+   3. ZONE DE CONTENU PRINCIPAL (À DROITE)
+   ========================================================================== */
+.main-content {
+    flex: 1;
+    padding: 60px;
+    overflow-y: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+.hero-teaser h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.purple-glow {
+    color: #bd00ff;
+    text-shadow: 0 0 15px rgba(189, 0, 255, 0.6);
+}
+
+.tagline {
+    color: #a4a0b5;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(189, 0, 255, 0.2);
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 650px;
+}
+
+.badge-dev {
+    display: inline-block;
+    background: #ff007a;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #b9b6c8;
+    line-height: 1.6;
+}
+
+.map-card-placeholder {
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.01);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 300px;
+}
+
+.map-card-placeholder h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+
+/* ==========================================================================
+   4. CODE SPÉCIFIQUE DES ONGLETS (INFOS, DISCORDS)
+   ========================================================================== */
+.info-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(189, 0, 255, 0.2);
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 650px;
+}
+
+.info-box h4 {
+    font-size: 1.2rem;
+    color: #bd00ff;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #b9b6c8;
+    line-height: 1.6;
+}
+
+.discord-boxes-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.discord-direct-box {
+    flex: 1;
+    min-width: 280px;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 0, 122, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.discord-direct-box h3 {
+    font-size: 1.4rem;
+}
+
+.discord-direct-box p {
+    color: #b9b6c8;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.btn-join-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #2360EB;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+
+.btn-join-large:hover {
+    background-color: #1D45A1;
+    transform: translateY(-2px);
+}
+
+.btn-join-large.orange-btn {
+    background-color: #CC0AFA;
+}
+
+.btn-join-large.orange-btn:hover {
+    background-color: #9517B3;
+}
+
+.discord-icon {
+    width: 22px;
+    height: auto;
+}
+
+.text-ready {
+    font-size: 0.85rem;
+    color: #00ff87;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+
+/* ==========================================================================
+   5. ONGLET : CODE CRÉATEUR
+   ========================================================================== */
+.creator-box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(189, 0, 255, 0.03));
+    border: 1px solid rgba(189, 0, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 650px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.shop-badge {
+    display: inline-block;
+    background: #ffaa00;
+    color: #000000;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.creator-box h3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #a4a0b5;
+    margin-bottom: 15px;
+}
+
+.code-display {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 4px;
+    background: rgba(189, 0, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 2px solid #bd00ff;
+    text-shadow: 0 0 20px rgba(189, 0, 255, 0.6);
+}
+
+.case-warning {
+    color: #00ff87;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.creator-note {
+    color: #b9b6c8;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   6. DESIGN DE L'ONGLET HIÉRARCHIE D'ÉQUIPE
+   ========================================================================== */
+.team-hierarchy {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+}
+
+.team-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.member-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    transition: transform 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+}
+
+.member-header {
+    margin-bottom: 15px;
+}
+
+.member-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.member-desc {
+    font-size: 0.9rem;
+    color: #a4a0b5;
+    line-height: 1.5;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.rank-owner { border-left: 4px solid #007bff; }
+.badge-owner { background: rgba(0, 123, 255, 0.1); color: #007bff; border: 1px solid rgba(0, 123, 255, 0.3); }
+
+.rank-admin { border-left: 4px solid #ffaa00; }
+.badge-admin { background: rgba(255, 170, 0, 0.1); color: #ffaa00; border: 1px solid rgba(255, 170, 0, 0.3); }
+
+.rank-editor { border-left: 4px solid #a349a4; }
+.badge-editor { background: rgba(163, 73, 164, 0.1); color: #cc66cc; border: 1px solid rgba(163, 73, 164, 0.3); }
+
+.rank-collab { border-left: 4px solid #707070; }
+.badge-collab { background: rgba(112, 112, 112, 0.1); color: #b5b5b5; border: 1px solid rgba(112, 112, 112, 0.3); }
+
+.rank-tester { border-left: 4px solid #00ff87; max-width: 600px; }
+.badge-tester { background: rgba(0, 255, 135, 0.1); color: #00ff87; border: 1px solid rgba(0, 255, 135, 0.3); }
+
+.testers-list {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+}
+
+.testers-list li {
+    font-size: 0.9rem;
+    color: #e1def0;
+    font-weight: 600;
+}
+
+
+/* ==========================================================================
+   7. ANIMATIONS
+   ========================================================================== */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);    
+    }
+}
